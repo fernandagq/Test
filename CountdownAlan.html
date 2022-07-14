@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <script> 
+        var a = 9;
+        var b =1;
+        var c;
+        var myStr= "I am a 'double quoted' string inside \"double quotes\""
+        var myName= "Fernanda Garcia"
+         var sentence = "My name is" + myName + "and I am a girl."
+
+        console.log(a +b);
+        console.log("more test");
+        a = 4;
+        console.log (a+=5);
+        console.log(a)
+        console.log(myStr)
+        console.log(myStr.length-4)
+        console.log(myStr[0])
+        console.log(myName.length-3)
+        var newName= myName[myName.length-3]
+        console.log(newName)
+
+        function wordBlanks(myNoun, myAdjective, myVerb, myAdverb){
+            var result="";
+            
+            result += "The " + myAdjective + " "+myNoun +" "+myVerb + " to the store " +myAdverb + "."
+
+            return result;
+        }
+
+        console.log(wordBlanks("dog", "big", "ran", "quickly"));
+
+        console.log(wordBlanks("bike", "slow", "flew", "slowly"));
+
+
+       
+        var ourArray = ["John", 23];
+
+        var myArray = [["the universe", 42], ["everything", 101010]];
+
+        ourArray[1] = 12; 
+
+        ourArray.push(["four", 4])
+
+        myArray.push(["hello","world" ])
+
+        console.log(ourArray[1])
+        console.log(myArray[0][1])
+        console.log(ourArray)
+        console.log(myArray)
+
+        function myWordBlank2 (myCat, myCat2){
+            var result = "";
+            result+= "I have two cats, " + myCat + " and " + myCat2
+            return result;
+        }
+
+        console.log(myWordBlank2("Lux", "Lushi"));
+
+        var newArray = [["hello", "world"], ["one", "two"]];
+        
+        console.log(newArray);
+        
+
+
+
+        
+        </script>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
