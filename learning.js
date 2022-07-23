@@ -760,12 +760,12 @@ console.log(updateRecords("1245", "artist", "Taylor Swift"));
 function updateRecordsTwo(id, prop, value2) {
 
     if (value2 === "") {
-        
+
         delete collection[id][prop];
-    
+
     } else if (prop === "tracks") {
 
-        collection[id][prop]= collection[id][prop] || [];
+        collection[id][prop] = collection[id][prop] || [];
         collection[id][prop].push(value2)
     } else {
         collection[id][prop] = JSON.parse(JSON.stringify(value2));
@@ -773,17 +773,651 @@ function updateRecordsTwo(id, prop, value2) {
 
 }
 
-console.log(updateRecordsTwo(5439, "artist","ABBA"));
+console.log(updateRecordsTwo(5439, "artist", "ABBA"));
 
 // Iterate with while loops, while loops:
 
 var myArray = [];
 
-var i = 0;
+var i = 5;
 
-while (i < 5){
+while (i > 2) {
+
+    myArray.push(i);
+    i--;
 
 }
 
+console.log(myArray);
+
+//iterate with a for loop
+
+//first step is the initialization of the variable i. next is the condition, lastly is the expression. The expression is what we want to occur at the end of each iteration of the "for" loop.
+
+var myArray2 = [];
+
+for (var i = 0; i < 5; i++) {
+    myArray2.push(i);
+}
+
+console.log(myArray2);
+
+var myArray3 = []
+
+for (var i = 1; i < 4; i++) {
+
+    myArray3.push(i);
+
+}
+
+console.log(myArray3);
+
+var str1 = "abcd"
+
+var str2 = "a,b,c,d,e"
+
+var array2 = [];
+
+
+console.log("---------------------------------------------------------------------")
+
+var array4 = [];
+
+str2.split("2");
+
+console.log(str2)
+
+for (var i = 0; i < str1.length; i++)
+
+    array4.push(str1[i])
+
+console.log(array4);
+console.log(array4[3])
+
+var test = "h,e,l,lo"
+
+var test2 = test.replace(",", "");
+console.log(test2);
+
+//Even Numbers With a For Loop;
+
+
+
+var evenArray = [];
+
+for (i = 0; i < 10; i += 2) {
+
+    evenArray.push(i);
+
+}
+
+console.log(evenArray)
+
+//Odd Numbers with For Loops
+
+var oddArray = [];
+
+for (i = 1; i < 10; i += 2) {
+
+    oddArray.push(i);
+
+}
+
+console.log(oddArray)
+
+//Count backwards with a For Loop
+
+var backArray = [];
+
+for (i = 10; i > 0; i -= 1) {
+
+    backArray.push(i);
+
+}
+
+console.log(backArray);
+
+//Count backwards using odd numbers
+
+var backwardsOddArray = [];
+
+for (i = 9; i > 0; i -= 2) {
+
+    backwardsOddArray.push(i);
+
+}
+
+console.log(backwardsOddArray);
+
+//iterate through an array with a for loop:
+
+var preTotalArray = [9, 10, 11, 12];
+
+var arrTotal = [0];
+
+
+console.log(preTotalArray)
+
+
+for (i = 0; i < preTotalArray.length; i += 1) {
+
+
+    arrTotal += preTotalArray[i];
+
+}
+
+console.log(arrTotal);
+
+console.log(1 + 2 + 3)
+
+
+console.log("-----------------------------------");
+
+var secondAttemptArray = [2, 3, 4, 5, 6];
+
+var total = 0;
+
+
+for (var i = 0; i < secondAttemptArray.length; i++) {
+
+    total += secondAttemptArray[i];
+
+}
+
+console.log(total);
+
+//Nesting for loops: if you have a multidimensional or nested array, you can use nested for loops to  access all the array elements.
+
+function multiplyAll(arr) {
+
+    var product = 1;
+
+    for (i = 0; i < arr.length; i++) {
+
+        //one for loop will only return three elememnts or length=3 for arr. To retrieve elements inside the array, use nested for loop:
+
+        for (j = 0; j < arr[i].length; j++) {
+
+            product *= arr[i][j]; //note, to find product of each number inside the nested arrays, use bracket notation to access inner array.
+
+        }
+
+    }
+
+    return product;
+
+}
+
+var product = multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
+
+console.log(product);
+
+// while loop vs do while loop:  while loops first checks the condition before it runs any code within the loop. A do while loop will always run at least one time and then it will check the condition.
+
+var myArray2 = [];
+
+var i = 10
+
+while (i < 5) {
+    myArray2.push(i);
+    i++;
+}
+
+console.log(i, myArray2);
+
+//do while loop: first run is executed, and condition is checked at the end.
+
+var myArray4 = [];
+i = 10;
+
+do {
+
+    myArray4.push(i);
+    i++;
+
+} while (i < 5);
+
+console.log(i, myArray4);
+
+//coding challenge. create a lookup profile function, where you pass in a name and property, and returns value.
+
+var contacts = [
+    {
+        "firstName": "Akira",
+        "lastName": "Laine",
+        "number": "1234567",
+        "likes": ["Pizza", "Coding", "Brownie Points"]
+    },
+
+    {
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "number": "76543",
+        "likes": ["Hogwartz", "Magic", "Hagrid"]
+
+    },
+    {
+        "firstName": "Sherlock",
+        "lastName": "Holmes",
+        "number": "45676543456",
+        "likes": ["Intriguing Cases", "Violin"]
+    },
+    {
+        "firstName": "Kristian",
+        "lastName": "Vos",
+        "number": "unknown",
+        "likes": ["Javascript", "Gaming", "Foxes"]
+    }
+
+];
+
+function lookUpProfile(name, prop) {
+
+    for (var i = 0; i < contacts.length; i++) {
+
+        if (contacts[i].firstName === name) {
+
+            return contacts[i][prop] || "no such property"
+            
+            }
+        } return "no such contact"
+
+
+    }
+
+
+
+var data = lookUpProfile("Akira", "likes");
+
+console.log(data);
+
+//generate random functions: simple way to create a random number in js
+
+function randomFraction () {
+
+    return Math.random();
+
+}
+
+console.log(randomFraction());
+
+//generate a random whole number that rounds down, between 0-20
+
+var randomNumberBetween0and19 = Math.floor(Math.random() * 20);
+
+console.log(randomNumberBetween0and19);
+
+//generate random numbers within a range:
+
+function ourRandomRange (ourMin, ourMax) {
+
+    return Math.floor(Math.random() * (ourMax - ourMin +1)) +ourMin;
+
+}
  
- 
+console.log(ourRandomRange(1,9))
+
+function myRandomRange (myMin, myMax) {
+
+    return Math.floor(Math.random() * (myMax - myMin +1) + myMin);
+}
+
+console.log(myRandomRange(2,10)); 
+
+
+
+//math.floor rounds decimals down to the nearest whole number
+//math.random only generates a number between 0 and 1, not including 1, hence why you multiply this number by the maximum range, add one to include the maximum range. 
+
+Math.floor(Math.random * 20) +1 /// => rather, than generate a number between 0 and 19, this method will return a number between 1 and 20. whatever number you add at the end will be the new floor but will also add to the range max, eg., if, instead of 1,  you used 4, then this function would generat a random number between 4 and 24.
+
+//to circumvent this problem use a strucutre similar to the ourRandomRange function created above.
+
+//using the parseInt function to convert to number variables:
+
+//if a string cannot be converted into an integer, it returns NaN => not a number:
+
+function convertToInteger(str){
+
+    return parseInt(str);
+
+}
+
+var stringForInt = convertToInteger("3")
+
+console.log(stringForInt);
+
+//use the parseInt function with a Radix - radix specifies the base of the number in the string such as base 2 or base 7. A base 2 would be binary, so that's one of the most common ones to use. But, the defualt is a base 10.
+
+//the radix can be any number between 2 and 36. => parseInt(string, radix) 
+
+// base 10 means that when you count 0-10, when you get to 10, you need to introduce another integer to the left of the number. 0-9 are your base 10.
+
+// base 2 means, as soon as we get to two (or an exponent of two) we need to add another digit to the left of our current digit. Because there are two symbols, each new digit has a value two times greater than the digit to its right.
+
+function convertToInteger2 (str2) {
+
+    return parseInt(str2, 2) // 2 changes the default to base 2 rather then base 10, that way, the computer knows the string being passed in is a binary number.
+}
+
+
+var convert2Int2 = convertToInteger2("1111")
+
+console.log(convert2Int2)
+
+function practicingRandomRanges (beg, end) {
+
+    return Math.floor(Math.random() * (end - beg +1)) + beg;
+
+}
+
+var testingMyPractice = practicingRandomRanges (4, 9);
+
+//console.log(testingMyPractice);
+
+// using the conditional ternary operator you can replace the below if/else statement to...
+
+function checkEqual (a, b) {
+
+    if (a === b) {
+
+        return true;
+        
+    }
+
+    else {
+        return false;
+    }
+
+}
+
+var checkIfTrue = checkEqual(1,1);
+
+console.log(checkIfTrue);
+
+
+//this
+
+function checkEqual2 (a,b) {
+
+    return a === b ? true : false
+
+}
+
+//multiple ternary operators: in the below function, we are trying to determine if the number that is passed in is greater than zero, if so, return "positive", we are also checking if hte number is less than zero, if so, return "negative" otherwise, return zero.
+
+function checkVals (num1) {
+
+    return (num1 > 0) ? "positive" : (num1 < 0) ? "negitve" : "zero"
+
+}
+
+var checkingVals = checkVals(0);
+
+console.log(checkingVals);
+
+//var vs let. starting with es6 in 2015, we can now declare variables with let and const: Let, does not let you declare a variable twice. This error is good because you typically don't want to declare the same variable twice within the same scope. This allows your program to give you an error to let you know there's something wrong.
+
+//"use strict" catches coding errors 
+
+//preferrable to use let for this reason.
+
+let catName = "Quincy";
+
+catName = "Monkey";
+
+console.log(catName);
+
+//another major difference between var and let i that when you declare a variable with var, it is declared globally, or locally, if declared inside a function. however, let, is limited to the block statement or expression that it was declared in.
+
+//blocks are anything inside curly brackets or sqaure brackets.
+
+function checkScope() {
+
+    "use strict";
+
+    let i = "function scope";
+
+    if (true) {
+
+        let i = "block scope";
+        console.log("Block scope i is: ", i);
+
+    }
+
+    console.log("Function scope i is : ", i);
+    return i;
+
+}
+
+console.log(checkScope());
+
+//it's important to continue to use let instead of bar so that the variable is used in the intended scope or block.
+
+//declare a read-only variable with the const keyword
+
+//const can declare a variable but it's read only
+
+function printManyTimes(str) {
+
+    "use strict";
+
+    const sentence = str + " is cool!";
+
+   // sentence = str + " is amazing!"; --> this would generate an error because you cannot reassign const keword.
+
+   // if you know for usre you neve want to reassign avariable, always use const, you don't accidenally reassing it if you donw't need to. 
+
+   // also, when using const, declare the var name using all cap letters.
+
+    for (let i = 0; i < str.length; i+=2) {
+
+        console.log(sentence);
+
+    }
+
+}
+
+console.log(printManyTimes("freeCodeCamp"));
+
+
+//Mutate an array declared with const:
+
+const s = [5, 7, 2];
+
+function editInPlace() {
+
+    "use strict";
+
+    //s= [2, 5, 7];
+
+    s[0]=2;
+    s[1]=5;
+    s[2]=7;
+
+ return s
+
+}
+
+console.log(editInPlace());
+
+///object.freeze will prevent object mutation as seen above:
+
+//in the below function, const math_constants was declared with an object value of pi=3.14, however, in the "try catch" we attempt to change that value by mutating it to 99. This will be allowed because obj.freeze wasn't
+
+// function freezeObj() {
+
+//   "use strict";
+
+//   const MATH_CONSTANTS = {
+
+//     PI : 3.14 
+
+//   };
+
+//   try {
+//     MATH_CONSTANTS.PI = 99;
+
+//   }catch (ex) {
+//     console.log(ex);
+//   }
+//   return MATH_CONSTANTS.PI;
+// }
+
+// const PI = freezeObj();
+
+// console.log(PI);
+
+
+//here, we will implement obj.freeze to see how it works to prevent the object mutation from occurring.
+
+// function freezeObj() {
+
+//     "use strict";
+  
+//     const MATH_CONSTANTS = {
+  
+//       PI : 3.14 
+  
+//     };
+  
+//     Object.freeze(MATH_CONSTANTS);
+
+//     try {
+//       MATH_CONSTANTS.PI = 99;
+  
+//     }catch (ex) {
+//       console.log(ex); // ex stands for exception
+//     }
+//     return MATH_CONSTANTS.PI;
+//   }
+  
+//   const PI = freezeObj();
+  
+//   console.log(PI);
+  
+//using arrow functions to write concise anonymous functions:
+
+// var magic = function() { 
+    
+//     //this function is considered anonymous because it has no name. instead, it's assigned to the variable magic. whenever you have an anonymous function, you can convert it to an arrow function.
+
+//     return new Date();
+
+// };
+
+
+// var magic = () => {
+
+//     return new Date();
+
+//     // when returning only one element, you don't need curly braces or a return statement
+// }
+
+const magic = () => new Date(); // this is the transformation of a previosuly, lengthy, anonymous function.
+
+//Write Arrow Functions with Parameters:
+
+//convert the below commented out function into an arrow function:
+
+// var myConcat = function (arr1, arr2) {
+
+//     return arr1.concat(arr2);
+// }
+
+// console.log(myConcat([1,2], [3,4,5]));
+
+const myConcat = (arr1, arr2) => arr1.concat(arr2);// for good measure, when assigning a function to a variable, change to const, that way the function is not redefined by accident.
+
+console.log(myConcat([1,2], [3,4,5]));
+
+//using arrow functions for higher order functions such as map, filter, and reduce.
+    //map, filter, and reduce take functions as arguments for processing collections of data.
+    //whenever one function takes another function as an argument, that's a good time for an arrow function.
+    //will update the below function so that only the positive integers in the array are squared.
+
+const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
+
+const squareList = (arr) => {
+    const squaredIntegers = arr.filter(num => Number.isInteger(num) && num >0).map(x => x*x);
+    return squaredIntegers;
+}
+
+const squaredIntegers = squareList(realNumberArray);
+console.log(squaredIntegers);
+
+
+//Write higher order arrow functions:
+
+//in order to create more flexible functions, you can use default parameters. The default parameter kicks in when the argument is not specified or is undefined.
+
+
+const increment = (function(){
+
+    return function increment(number, value){
+
+        return number + value;
+
+    };
+
+}) ();
+
+console.log(increment(5,2));
+console.log(increment(5))
+
+let moxie = ["1","b","c","d","e"];
+
+let thunder = [1,"h","j","d","k","e"];
+
+let attack = [];
+
+for (let i = 0; i < moxie.length; i++) {
+
+   
+
+    for(let j = 0; j < thunder.length; j++){
+
+       
+
+        if(moxie[i] === thunder[j]){
+
+            attack.push(thunder[j]);
+
+             console.log(thunder[j]);
+           
+        }
+
+    }
+
+}
+
+console.log(attack);
+
+let str11 = "a,b,e,c,d,e";
+let str12 = "degevs";
+
+let arr12 = [];
+
+let arr13 = [];
+
+let arr14 = [];
+
+str1.split("");
+
+console.log(str11);
+
+for (let i = 0; i < str11.length; i ++){
+
+    if (str11[i] != ",") {
+
+        arr12.push(str11[i]);
+    }
+
+}
+// console.log(str11)
+console.log(arr12)
+
+//learn to use map and filter + arrow functions to type this out more elegantly.
+
+//learn to use dictionaries to make this solution more efficient 
+
